@@ -1,7 +1,7 @@
 /* Single-sheet Nvim-like green glass for Vibrancy Continued */
 :root {
-  --glass-surface: rgba(49, 92, 58, 0.48);
-  --glass-filter: blur(48px) saturate(132%) brightness(110%);
+  --glass-surface: rgba(49, 92, 58, 0.64);
+  --glass-filter: blur(56px) saturate(130%) brightness(106%);
   --glass-hair: rgba(175, 255, 133, 0.055);
   --glass-hair-soft: rgba(175, 255, 133, 0.035);
   --fg: #f0ffd9;
@@ -270,9 +270,74 @@
 .monaco-workbench .monaco-menu-container,
 .monaco-workbench .editor-widget,
 .monaco-workbench .monaco-hover {
-  background: rgba(49, 92, 58, 0.62) !important;
+  background: rgba(49, 92, 58, 0.72) !important;
   color: var(--fg) !important;
   backdrop-filter: var(--glass-filter) !important;
   -webkit-backdrop-filter: var(--glass-filter) !important;
   border-color: rgba(175, 255, 133, 0.12) !important;
+}
+
+
+/* Less transparent unified blur tuning */
+.monaco-workbench {
+  background: rgba(49, 92, 58, 0.64) !important;
+  backdrop-filter: var(--glass-filter) !important;
+  -webkit-backdrop-filter: var(--glass-filter) !important;
+}
+
+.monaco-workbench .notifications-toasts,
+.monaco-workbench .suggest-widget,
+.monaco-workbench .quick-input-widget,
+.monaco-workbench .monaco-menu-container,
+.monaco-workbench .editor-widget,
+.monaco-workbench .monaco-hover {
+  background: rgba(49, 92, 58, 0.72) !important;
+  backdrop-filter: var(--glass-filter) !important;
+  -webkit-backdrop-filter: var(--glass-filter) !important;
+}
+
+
+/* Git Graph branch/reference labels: keep text readable on coloured pills */
+.monaco-workbench webview,
+.monaco-workbench iframe,
+body.vscode-dark,
+body.vscode-high-contrast {
+  --vscode-badge-background: #afff85 !important;
+  --vscode-badge-foreground: #123018 !important;
+  --vscode-button-background: #afff85 !important;
+  --vscode-button-foreground: #123018 !important;
+  --vscode-button-hoverBackground: #c1ff9f !important;
+}
+
+/* These selectors cover Git Graph's minified reference label variants. */
+[class*="branch" i][class*="label" i],
+[class*="reference" i][class*="label" i],
+[class*="ref" i][class*="label" i],
+[class*="tag" i][class*="label" i],
+[class*="label" i][style*="background"],
+[class*="Label" i][style*="background"],
+span[style*="background-color"],
+div[style*="background-color"] > span,
+span[style*="border-radius"],
+div[style*="border-radius"] span {
+  color: #123018 !important;
+  text-shadow: none !important;
+  font-weight: 500 !important;
+}
+
+[class*="branch" i][class*="label" i] svg,
+[class*="reference" i][class*="label" i] svg,
+[class*="ref" i][class*="label" i] svg,
+[class*="tag" i][class*="label" i] svg,
+span[style*="background-color"] svg,
+span[style*="border-radius"] svg {
+  fill: #123018 !important;
+  color: #123018 !important;
+}
+
+/* If a label is rendered as plain text over the graph, brighten it instead. */
+[class*="branch" i]:not([style*="background"]),
+[class*="reference" i]:not([style*="background"]),
+[class*="ref" i]:not([style*="background"]) {
+  color: #f0ffd9 !important;
 }
