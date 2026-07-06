@@ -211,6 +211,69 @@
   color: var(--accent) !important;
 }
 
+/* Buttons: lock readable text/background pairs across VS Code widgets and webviews. */
+.monaco-workbench .monaco-button,
+.monaco-workbench .monaco-text-button,
+.monaco-workbench a.monaco-button,
+.monaco-workbench .monaco-button-dropdown,
+.monaco-workbench button {
+  background: var(--accent) !important;
+  color: #123018 !important;
+  border: 1px solid rgba(18, 48, 24, 0.40) !important;
+  text-shadow: none !important;
+}
+
+.monaco-workbench .monaco-button:hover,
+.monaco-workbench .monaco-text-button:hover,
+.monaco-workbench a.monaco-button:hover,
+.monaco-workbench .monaco-button-dropdown:hover,
+.monaco-workbench button:hover {
+  background: #c1ff9f !important;
+  color: #123018 !important;
+}
+
+.monaco-workbench .monaco-button:focus-visible,
+.monaco-workbench .monaco-text-button:focus-visible,
+.monaco-workbench a.monaco-button:focus-visible,
+.monaco-workbench .monaco-button-dropdown:focus-visible,
+.monaco-workbench button:focus-visible {
+  outline: 2px solid rgba(175, 255, 133, 0.72) !important;
+  outline-offset: 2px !important;
+}
+
+.monaco-workbench .monaco-button.secondary,
+.monaco-workbench .monaco-text-button.secondary,
+.monaco-workbench .monaco-button.secondaryButton,
+.monaco-workbench .monaco-text-button.secondaryButton {
+  background: var(--warn) !important;
+  color: #123018 !important;
+}
+
+.monaco-workbench .monaco-button.secondary:hover,
+.monaco-workbench .monaco-text-button.secondary:hover,
+.monaco-workbench .monaco-button.secondaryButton:hover,
+.monaco-workbench .monaco-text-button.secondaryButton:hover {
+  background: #fff0a8 !important;
+  color: #123018 !important;
+}
+
+.monaco-workbench .monaco-button.disabled,
+.monaco-workbench .monaco-button[disabled],
+.monaco-workbench .monaco-text-button.disabled,
+.monaco-workbench .monaco-text-button[disabled],
+.monaco-workbench button:disabled {
+  background: rgba(175, 255, 133, 0.18) !important;
+  color: rgba(199, 226, 185, 0.70) !important;
+  border-color: rgba(175, 255, 133, 0.22) !important;
+}
+
+.monaco-workbench .monaco-button .codicon,
+.monaco-workbench .monaco-text-button .codicon,
+.monaco-workbench .monaco-button-dropdown .codicon,
+.monaco-workbench button .codicon {
+  color: #123018 !important;
+}
+
 /* Editor details. */
 .monaco-editor .current-line,
 .monaco-editor .view-overlays .current-line {
@@ -307,6 +370,10 @@ body.vscode-high-contrast {
   --vscode-button-background: #afff85 !important;
   --vscode-button-foreground: #123018 !important;
   --vscode-button-hoverBackground: #c1ff9f !important;
+  --vscode-button-secondaryBackground: #ffe68a !important;
+  --vscode-button-secondaryForeground: #123018 !important;
+  --vscode-button-secondaryHoverBackground: #fff0a8 !important;
+  --vscode-disabledForeground: rgba(199, 226, 185, 0.70) !important;
 }
 
 /* These selectors cover Git Graph's minified reference label variants. */
