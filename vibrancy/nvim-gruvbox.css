@@ -211,69 +211,6 @@
   color: var(--accent) !important;
 }
 
-/* Buttons: lock readable text/background pairs across VS Code widgets and webviews. */
-.monaco-workbench .monaco-button,
-.monaco-workbench .monaco-text-button,
-.monaco-workbench a.monaco-button,
-.monaco-workbench .monaco-button-dropdown,
-.monaco-workbench button {
-  background: var(--accent) !important;
-  color: #123018 !important;
-  border: 1px solid rgba(18, 48, 24, 0.40) !important;
-  text-shadow: none !important;
-}
-
-.monaco-workbench .monaco-button:hover,
-.monaco-workbench .monaco-text-button:hover,
-.monaco-workbench a.monaco-button:hover,
-.monaco-workbench .monaco-button-dropdown:hover,
-.monaco-workbench button:hover {
-  background: #c1ff9f !important;
-  color: #123018 !important;
-}
-
-.monaco-workbench .monaco-button:focus-visible,
-.monaco-workbench .monaco-text-button:focus-visible,
-.monaco-workbench a.monaco-button:focus-visible,
-.monaco-workbench .monaco-button-dropdown:focus-visible,
-.monaco-workbench button:focus-visible {
-  outline: 2px solid rgba(175, 255, 133, 0.72) !important;
-  outline-offset: 2px !important;
-}
-
-.monaco-workbench .monaco-button.secondary,
-.monaco-workbench .monaco-text-button.secondary,
-.monaco-workbench .monaco-button.secondaryButton,
-.monaco-workbench .monaco-text-button.secondaryButton {
-  background: var(--warn) !important;
-  color: #123018 !important;
-}
-
-.monaco-workbench .monaco-button.secondary:hover,
-.monaco-workbench .monaco-text-button.secondary:hover,
-.monaco-workbench .monaco-button.secondaryButton:hover,
-.monaco-workbench .monaco-text-button.secondaryButton:hover {
-  background: #fff0a8 !important;
-  color: #123018 !important;
-}
-
-.monaco-workbench .monaco-button.disabled,
-.monaco-workbench .monaco-button[disabled],
-.monaco-workbench .monaco-text-button.disabled,
-.monaco-workbench .monaco-text-button[disabled],
-.monaco-workbench button:disabled {
-  background: rgba(175, 255, 133, 0.18) !important;
-  color: rgba(199, 226, 185, 0.70) !important;
-  border-color: rgba(175, 255, 133, 0.22) !important;
-}
-
-.monaco-workbench .monaco-button .codicon,
-.monaco-workbench .monaco-text-button .codicon,
-.monaco-workbench .monaco-button-dropdown .codicon,
-.monaco-workbench button .codicon {
-  color: #123018 !important;
-}
-
 /* Editor details. */
 .monaco-editor .current-line,
 .monaco-editor .view-overlays .current-line {
@@ -370,10 +307,6 @@ body.vscode-high-contrast {
   --vscode-button-background: #afff85 !important;
   --vscode-button-foreground: #123018 !important;
   --vscode-button-hoverBackground: #c1ff9f !important;
-  --vscode-button-secondaryBackground: #ffe68a !important;
-  --vscode-button-secondaryForeground: #123018 !important;
-  --vscode-button-secondaryHoverBackground: #fff0a8 !important;
-  --vscode-disabledForeground: rgba(199, 226, 185, 0.70) !important;
 }
 
 /* These selectors cover Git Graph's minified reference label variants. */
@@ -407,4 +340,78 @@ span[style*="border-radius"] svg {
 [class*="reference" i]:not([style*="background"]),
 [class*="ref" i]:not([style*="background"]) {
   color: #f0ffd9 !important;
+}
+
+
+/* Preserved readability fixes: SCM, Search, Quick Pick, badges and Git decorations */
+.monaco-workbench .monaco-inputbox input,
+.monaco-workbench .monaco-inputbox textarea,
+.monaco-workbench textarea,
+.monaco-workbench input[type="text"],
+.monaco-workbench input[type="search"] {
+  color: #f4ffe6 !important;
+  caret-color: #afff85 !important;
+}
+
+.monaco-workbench .monaco-inputbox input::placeholder,
+.monaco-workbench .monaco-inputbox textarea::placeholder,
+.monaco-workbench textarea::placeholder,
+.monaco-workbench input::placeholder {
+  color: rgba(215, 239, 200, 0.88) !important;
+  opacity: 1 !important;
+}
+
+.monaco-workbench .monaco-highlighted-label .highlight,
+.monaco-workbench .highlight,
+.monaco-workbench .findMatch,
+.monaco-workbench .search-view .match,
+.monaco-workbench .search-view .filematch .monaco-highlighted-label .highlight,
+.monaco-workbench .search-view .foldermatch .monaco-highlighted-label .highlight,
+.monaco-workbench .results .monaco-highlighted-label .highlight {
+  color: #ffffff !important;
+  background: rgba(16, 39, 19, 0.86) !important;
+  border-radius: 3px !important;
+  text-shadow: none !important;
+}
+
+.monaco-workbench .search-view .monaco-list-row,
+.monaco-workbench .scm-view .monaco-list-row,
+.monaco-workbench .quick-input-widget .monaco-list-row,
+.monaco-workbench .quick-input-list .monaco-list-row {
+  color: #f4ffe6 !important;
+}
+
+.monaco-workbench .quick-input-widget,
+.monaco-workbench .quick-input-widget .quick-input-titlebar,
+.monaco-workbench .quick-input-widget .quick-input-header,
+.monaco-workbench .quick-input-widget .quick-input-list,
+.monaco-workbench .quick-input-widget .monaco-list,
+.monaco-workbench .monaco-inputbox,
+.monaco-workbench .scm-view .scm-input,
+.monaco-workbench .scm-view .monaco-inputbox {
+  background: rgba(35, 75, 47, 0.74) !important;
+  color: #f4ffe6 !important;
+  border-color: rgba(175, 255, 133, 0.24) !important;
+}
+
+.monaco-workbench .label-description,
+.monaco-workbench .label-detail,
+.monaco-workbench .monaco-description,
+.monaco-workbench .quick-input-list .label-description,
+.monaco-workbench .quick-input-list .label-detail,
+.monaco-workbench .search-view .label-description,
+.monaco-workbench .scm-view .label-description {
+  color: #d7efc8 !important;
+  opacity: 1 !important;
+}
+
+.monaco-workbench .monaco-button,
+.monaco-workbench button.monaco-button,
+.monaco-workbench .monaco-text-button,
+.monaco-workbench .monaco-count-badge,
+.monaco-workbench .count-badge-wrapper .monaco-count-badge,
+.monaco-workbench .badge-content,
+.monaco-workbench .monaco-action-bar .badge .badge-content {
+  color: #102713 !important;
+  text-shadow: none !important;
 }
